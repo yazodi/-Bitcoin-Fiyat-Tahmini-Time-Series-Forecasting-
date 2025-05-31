@@ -1,28 +1,67 @@
 
-BTC_USD_Sample_2020_2024 hazır veri kullanıldı
 
-Grafikte gördüğün gibi:
+---
+tags:
+- time-series
+- bitcoin
+- lstm
+- forecasting
+- keras
+- deep-learning
+---
 
-Mavi çizgi → Gerçek BTC fiyatları (2020–2024 arası)
 
-Turuncu çizgi → Modelin gelecek 30 gün için yaptığı tahmin
+# 📈 Bitcoin LSTM Fiyat Tahmini Modeli
 
-Model geçmişi güzel öğrenmiş ve kısa vadeli tahminlerde istikrarlı bir gidişat yakalamış.
+Bu model, 2020–2024 tarihleri arasında Bitcoin kapanış fiyatlarına bakarak LSTM kullanarak zaman serisi tahmini yapmaktadır.
 
-📦 Bitcoin Fiyat Tahmini — Özet (README için kısa notlar)
-Proje Amacı:
-Geçmiş BTC-USD verilerini kullanarak, LSTM modeliyle 30 günlük fiyat tahmini yapmak.
+Kullanım Alanları
+Kripto fiyat tahmini
 
-Adımlar:
 
-Veriyi yfinance veya CSV ile aldık.
 
-Kapanış fiyatlarını görselleştirdik.
+## 🧠 Model Özellikleri
 
-MinMaxScaler ile veriyi ölçekledik.
+- Model tipi: LSTM
+- Girdi: Son 60 günün kapanış fiyatı
+- Çıktı: Bir sonraki günün tahmini fiyatı
+- Eğitim veri kümesi: BTC_USD_Sample_2020_2024.csv
 
-60 günlük dilimler oluşturup LSTM modeliyle eğittik.
 
-Modelin eğitimi sonucunda gerçek ve tahmin fiyatlarını karşılaştırdık.
 
-Son olarak gelecekteki 30 gün için fiyat tahmin ettik.
+## 🔧 Kullanılan Araçlar
+- Python
+- TensorFlow / Keras
+- Streamlit
+- LSTM Modeli (60 günlük pencere ile tahmin)
+
+## 📁 Dosyalar
+- `btc_lstm_model.keras`: Eğitilmiş model dosyası
+- `BTC_USD_Sample_2020_2024.csv`: Veri seti
+- `app.py`: Streamlit uygulaması
+
+## 🔗 Hugging Face
+Model dosyasına şu bağlantıdan ulaşabilirsiniz:
+👉 [https://huggingface.co/yazodi/Bitcoin_Fiyat_Tahmini_Time_Series_Forecasting](https://huggingface.co/yazodi/Bitcoin_Fiyat_Tahmini_Time_Series_Forecasting)
+
+## 🖼️ Ekran Görüntüsü
+![Tahmin Ekranı](Screenshot_3.png)
+
+## 🚀 Başlatmak için
+```bash
+streamlit run app.py
+```
+
+## 📦 Gerekli Paketler (`requirements.txt`)
+```txt
+streamlit
+numpy
+pandas
+matplotlib
+scikit-learn
+tensorflow
+``` 
+    """)
+
+📝 Lisans
+MIT License
